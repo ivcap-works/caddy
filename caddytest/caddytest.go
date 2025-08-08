@@ -24,11 +24,11 @@ import (
 
 	"github.com/aryann/difflib"
 
-	caddycmd "github.com/caddyserver/caddy/v2/cmd"
+	caddycmd "github.com/ivcap-works/caddy/v2/cmd"
 
-	"github.com/caddyserver/caddy/v2/caddyconfig"
+	"github.com/ivcap-works/caddy/v2/caddyconfig"
 	// plug in Caddy modules here
-	_ "github.com/caddyserver/caddy/v2/modules/standard"
+	_ "github.com/ivcap-works/caddy/v2/modules/standard"
 )
 
 // Config store any configuration required to make the tests run

@@ -35,9 +35,9 @@ import (
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 
-	"github.com/caddyserver/caddy/v2"
-	"github.com/caddyserver/caddy/v2/modules/caddyhttp"
-	"github.com/caddyserver/caddy/v2/modules/caddyhttp/templates"
+	"github.com/ivcap-works/caddy/v2"
+	"github.com/ivcap-works/caddy/v2/modules/caddyhttp"
+	"github.com/ivcap-works/caddy/v2/modules/caddyhttp/templates"
 )
 
 // BrowseTemplate is the default template document to use for
@@ -93,10 +93,10 @@ func (fsrv *FileServer) serveBrowse(fileSystem fs.FS, root, dirPath string, w ht
 	// redirects and especially redirect loops! (Redirecting using the
 	// original URI is necessary because that's the URI the browser knows,
 	// we don't want to redirect from internally-rewritten URIs.)
-	// See https://github.com/caddyserver/caddy/issues/4205.
+	// See https://github.com/ivcap-works/caddy/issues/4205.
 	// We also redirect if the path is empty, because this implies the path
 	// prefix was fully stripped away by a `handle_path` handler for example.
-	// See https://github.com/caddyserver/caddy/issues/4466.
+	// See https://github.com/ivcap-works/caddy/issues/4466.
 	origReq := r.Context().Value(caddyhttp.OriginalRequestCtxKey).(http.Request)
 	if r.URL.Path == "" || path.Base(origReq.URL.Path) == path.Base(r.URL.Path) {
 		if !strings.HasSuffix(origReq.URL.Path, "/") {

@@ -20,9 +20,9 @@ import (
 	"net/netip"
 	"strings"
 
-	"github.com/caddyserver/caddy/v2"
-	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
-	"github.com/caddyserver/caddy/v2/internal"
+	"github.com/ivcap-works/caddy/v2"
+	"github.com/ivcap-works/caddy/v2/caddyconfig/caddyfile"
+	"github.com/ivcap-works/caddy/v2/internal"
 )
 
 func init() {

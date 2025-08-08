@@ -107,8 +107,8 @@ formatters:
       sections:
         - standard # Standard section: captures all standard packages.
         - default # Default section: contains all imports that could not be matched to another section type.
-        - prefix(github.com/caddyserver/caddy/v2/cmd) # ensure that this is always at the top and always has a line break.
-        - prefix(github.com/caddyserver/caddy) # Custom section: groups all imports with the specified Prefix.
+        - prefix(github.com/ivcap-works/caddy/v2/cmd) # ensure that this is always at the top and always has a line break.
+        - prefix(github.com/ivcap-works/caddy) # Custom section: groups all imports with the specified Prefix.
       custom-order: true
   exclusions:
     generated: lax

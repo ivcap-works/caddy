@@ -31,11 +31,11 @@ import (
 	"github.com/spf13/cobra"
 	"go.uber.org/zap"
 
-	caddycmd "github.com/caddyserver/caddy/v2/cmd"
+	caddycmd "github.com/ivcap-works/caddy/v2/cmd"
 
-	"github.com/caddyserver/caddy/v2"
-	"github.com/caddyserver/caddy/v2/caddyconfig"
-	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
+	"github.com/ivcap-works/caddy/v2"
+	"github.com/ivcap-works/caddy/v2/caddyconfig"
+	"github.com/ivcap-works/caddy/v2/caddyconfig/caddyfile"
 )
 
 func init() {

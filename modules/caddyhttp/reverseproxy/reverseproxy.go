@@ -38,12 +38,12 @@ import (
 	"go.uber.org/zap/zapcore"
 	"golang.org/x/net/http/httpguts"
 
-	"github.com/caddyserver/caddy/v2"
-	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
-	"github.com/caddyserver/caddy/v2/modules/caddyevents"
-	"github.com/caddyserver/caddy/v2/modules/caddyhttp"
-	"github.com/caddyserver/caddy/v2/modules/caddyhttp/headers"
-	"github.com/caddyserver/caddy/v2/modules/caddyhttp/rewrite"
+	"github.com/ivcap-works/caddy/v2"
+	"github.com/ivcap-works/caddy/v2/caddyconfig/caddyfile"
+	"github.com/ivcap-works/caddy/v2/modules/caddyevents"
+	"github.com/ivcap-works/caddy/v2/modules/caddyhttp"
+	"github.com/ivcap-works/caddy/v2/modules/caddyhttp/headers"
+	"github.com/ivcap-works/caddy/v2/modules/caddyhttp/rewrite"
 )
 
 func init() {
@@ -248,9 +248,9 @@ func (h *Handler) Provision(ctx caddy.Context) error {
 		// std has fastcgi implementation that doesn't need this value to process the body, but we can safely assume that's
 		// not used.
 		// http3 requests have a negative content length for GET and HEAD requests, if that header is not sent.
-		// see: https://github.com/caddyserver/caddy/issues/6678#issuecomment-2472224182
+		// see: https://github.com/ivcap-works/caddy/issues/6678#issuecomment-2472224182
 		// Though it appears even if CONTENT_LENGTH is invalid, php-fpm can handle just fine if the body is empty (no Stdin records sent).
-		// php-fpm will hang if there is any data in the body though, https://github.com/caddyserver/caddy/issues/5420#issuecomment-2415943516
+		// php-fpm will hang if there is any data in the body though, https://github.com/ivcap-works/caddy/issues/5420#issuecomment-2415943516
 
 		// TODO: better default buffering for fastcgi requests without content length, in theory a value of 1 should be enough, make it bigger anyway
 		if module, ok := h.Transport.(caddy.Module); ok && module.CaddyModule().ID.Name() == "fastcgi" && h.RequestBuffers == 0 {
@@ -610,7 +610,7 @@ var websocketHeaderMapping = map[string]string{
 // RFC 6455, i.e. `WebSocket` with uppercase 'S'. Most servers don't
 // care about this difference (read headers case insensitively), but
 // some do, so this maximizes compatibility with upstreams.
-// See https://github.com/caddyserver/caddy/pull/6621
+// See https://github.com/ivcap-works/caddy/pull/6621
 func normalizeWebsocketHeaders(header http.Header) {
 	for k, rk := range websocketHeaderMapping {
 		if v, ok := header[k]; ok {
@@ -1075,7 +1075,7 @@ func (h *Handler) finalizeResponse(
 		// there's nothing an error handler can do to recover at this point;
 		// we'll just log the error and abort the stream here and panic just as
 		// the standard lib's proxy to propagate the stream error.
-		// see issue https://github.com/caddyserver/caddy/issues/5951
+		// see issue https://github.com/ivcap-works/caddy/issues/5951
 		if c := logger.Check(zapcore.WarnLevel, "aborting with incomplete response"); c != nil {
 			c.Write(zap.Error(err))
 		}

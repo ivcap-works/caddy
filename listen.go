@@ -300,7 +300,7 @@ func (spc *sharedPacketConn) Unwrap() net.PacketConn {
 	return spc.PacketConn
 }
 
-// Interface guards (see https://github.com/caddyserver/caddy/issues/3998)
+// Interface guards (see https://github.com/ivcap-works/caddy/issues/3998)
 var (
 	_ (interface {
 		Unwrap() net.PacketConn

@@ -20,7 +20,7 @@ import (
 
 	"golang.org/x/sys/windows/svc"
 
-	"github.com/caddyserver/caddy/v2/notify"
+	"github.com/ivcap-works/caddy/v2/notify"
 )
 
 func init() {

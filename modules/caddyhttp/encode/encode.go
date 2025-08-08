@@ -30,8 +30,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/caddyserver/caddy/v2"
-	"github.com/caddyserver/caddy/v2/modules/caddyhttp"
+	"github.com/ivcap-works/caddy/v2"
+	"github.com/ivcap-works/caddy/v2/modules/caddyhttp"
 )
 
 func init() {
@@ -249,7 +249,7 @@ func (rw *responseWriter) WriteHeader(status int) {
 
 	// write status immediately if status is 2xx and the request is CONNECT
 	// since it means the response is successful.
-	// see: https://github.com/caddyserver/caddy/issues/6733#issuecomment-2525058845
+	// see: https://github.com/ivcap-works/caddy/issues/6733#issuecomment-2525058845
 	if rw.isConnect && 200 <= status && status <= 299 {
 		rw.ResponseWriter.WriteHeader(status)
 		rw.wroteHeader = true

@@ -24,13 +24,13 @@ import (
 
 	"github.com/caddyserver/certmagic"
 
-	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
+	"github.com/ivcap-works/caddy/v2/caddyconfig/caddyfile"
 )
 
 // CustomCertSelectionPolicy represents a policy for selecting the certificate
 // used to complete a handshake when there may be multiple options. All fields
 // specified must match the candidate certificate for it to be chosen.
-// This was needed to solve https://github.com/caddyserver/caddy/issues/2588.
+// This was needed to solve https://github.com/ivcap-works/caddy/issues/2588.
 type CustomCertSelectionPolicy struct {
 	// The certificate must have one of these serial numbers.
 	SerialNumber []bigInt `json:"serial_number,omitempty"`

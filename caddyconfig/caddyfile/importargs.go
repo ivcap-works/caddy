@@ -21,7 +21,7 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/caddyserver/caddy/v2"
+	"github.com/ivcap-works/caddy/v2"
 )
 
 // parseVariadic determines if the token is a variadic placeholder,
@@ -54,7 +54,7 @@ func parseVariadic(token Token, argCount int) (bool, int, int) {
 
 	// A valid token may contain several placeholders, and
 	// they may be separated by ":". It's not variadic.
-	// https://github.com/caddyserver/caddy/issues/5716
+	// https://github.com/ivcap-works/caddy/issues/5716
 	if strings.Contains(start, "}") || strings.Contains(end, "{") {
 		return false, 0, 0
 	}

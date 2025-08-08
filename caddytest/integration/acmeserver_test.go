@@ -14,7 +14,7 @@ import (
 	"go.uber.org/zap"
 	"go.uber.org/zap/exp/zapslog"
 
-	"github.com/caddyserver/caddy/v2/caddytest"
+	"github.com/ivcap-works/caddy/v2/caddytest"
 )
 
 func TestACMEServerDirectory(t *testing.T) {

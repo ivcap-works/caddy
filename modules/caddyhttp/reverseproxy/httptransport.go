@@ -36,11 +36,11 @@ import (
 	"go.uber.org/zap/zapcore"
 	"golang.org/x/net/http2"
 
-	"github.com/caddyserver/caddy/v2"
-	"github.com/caddyserver/caddy/v2/caddyconfig"
-	"github.com/caddyserver/caddy/v2/modules/caddyhttp"
-	"github.com/caddyserver/caddy/v2/modules/caddytls"
-	"github.com/caddyserver/caddy/v2/modules/internal/network"
+	"github.com/ivcap-works/caddy/v2"
+	"github.com/ivcap-works/caddy/v2/caddyconfig"
+	"github.com/ivcap-works/caddy/v2/modules/caddyhttp"
+	"github.com/ivcap-works/caddy/v2/modules/caddytls"
+	"github.com/ivcap-works/caddy/v2/modules/internal/network"
 )
 
 func init() {
@@ -184,7 +184,7 @@ func (h *HTTPTransport) Provision(ctx caddy.Context) error {
 	}
 	// some users may provide http versions not recognized by caddy, instead of trying to
 	// guess the version, we just error out and let the user fix their config
-	// see: https://github.com/caddyserver/caddy/issues/7111
+	// see: https://github.com/ivcap-works/caddy/issues/7111
 	for _, v := range h.Versions {
 		if !slices.Contains(allowedVersions, v) {
 			return fmt.Errorf("unsupported HTTP version: %s, supported version: %s", v, allowedVersionsString)

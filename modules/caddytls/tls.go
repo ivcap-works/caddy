@@ -32,9 +32,9 @@ import (
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 
-	"github.com/caddyserver/caddy/v2"
-	"github.com/caddyserver/caddy/v2/internal"
-	"github.com/caddyserver/caddy/v2/modules/caddyevents"
+	"github.com/ivcap-works/caddy/v2"
+	"github.com/ivcap-works/caddy/v2/internal"
+	"github.com/ivcap-works/caddy/v2/modules/caddyevents"
 )
 
 func init() {

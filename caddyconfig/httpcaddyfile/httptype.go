@@ -27,12 +27,12 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/caddyserver/caddy/v2"
-	"github.com/caddyserver/caddy/v2/caddyconfig"
-	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
-	"github.com/caddyserver/caddy/v2/modules/caddyhttp"
-	"github.com/caddyserver/caddy/v2/modules/caddypki"
-	"github.com/caddyserver/caddy/v2/modules/caddytls"
+	"github.com/ivcap-works/caddy/v2"
+	"github.com/ivcap-works/caddy/v2/caddyconfig"
+	"github.com/ivcap-works/caddy/v2/caddyconfig/caddyfile"
+	"github.com/ivcap-works/caddy/v2/modules/caddyhttp"
+	"github.com/ivcap-works/caddy/v2/modules/caddypki"
+	"github.com/ivcap-works/caddy/v2/modules/caddytls"
 )
 
 func init() {
@@ -638,7 +638,7 @@ func (st *ServerType) serversFromPairings(
 
 		// Using paths in site addresses is deprecated
 		// See ParseAddress() where parsing should later reject paths
-		// See https://github.com/caddyserver/caddy/pull/4728 for a full explanation
+		// See https://github.com/ivcap-works/caddy/pull/4728 for a full explanation
 		for _, sblock := range p.serverBlocks {
 			for _, addr := range sblock.parsedKeys {
 				if addr.Path != "" {
@@ -691,7 +691,7 @@ func (st *ServerType) serversFromPairings(
 			if iWildcardHost != jWildcardHost {
 				// site blocks that have a key with a wildcard in the hostname
 				// must always be less specific than blocks without one; see
-				// https://github.com/caddyserver/caddy/issues/3410
+				// https://github.com/ivcap-works/caddy/issues/3410
 				return jWildcardHost && !iWildcardHost
 			}
 			if specificity(iLongestHost) == specificity(jLongestHost) {
@@ -882,7 +882,7 @@ func (st *ServerType) serversFromPairings(
 			}
 
 			// add log associations
-			// see https://github.com/caddyserver/caddy/issues/3310
+			// see https://github.com/ivcap-works/caddy/issues/3310
 			sblockLogHosts := sblock.hostsFromKeys(true)
 			for _, cval := range sblock.pile["custom_log"] {
 				ncl := cval.Value.(namedCustomLog)
@@ -955,7 +955,7 @@ func (st *ServerType) serversFromPairings(
 		// least have a matching connection policy, so here we append a
 		// catch-all/default policy if there isn't one already (it's
 		// important that it goes at the end) - see issue #3004:
-		// https://github.com/caddyserver/caddy/issues/3004
+		// https://github.com/ivcap-works/caddy/issues/3004
 		// TODO: maybe a smarter way to handle this might be to just make the
 		// auto-HTTPS logic at provision-time detect if there is any connection
 		// policy missing for any HTTPS-enabled hosts, if so, add it... maybe?
@@ -1387,7 +1387,7 @@ func normalizeDirectiveName(directive string) string {
 	// As a special case, we want "handle_path" to be sorted
 	// at the same level as "handle", so we force them to use
 	// the same directive name after their parsing is complete.
-	// See https://github.com/caddyserver/caddy/issues/3675#issuecomment-678042377
+	// See https://github.com/ivcap-works/caddy/issues/3675#issuecomment-678042377
 	if directive == "handle_path" {
 		directive = "handle"
 	}
@@ -1573,7 +1573,7 @@ func parseMatcherDefinitions(d *caddyfile.Dispenser, matchers map[string]caddy.M
 			// in front of the expression token itself; we use Clone() to
 			// make the new token to keep the same the import location as
 			// the next token, if this is within a snippet or imported file.
-			// see https://github.com/caddyserver/caddy/issues/6287
+			// see https://github.com/ivcap-works/caddy/issues/6287
 			expressionToken := d.Token().Clone()
 			expressionToken.Text = "expression"
 			err := makeMatcher("expression", []caddyfile.Token{expressionToken, d.Token()})
