@@ -246,6 +246,13 @@ func (rr *responseRecorder) FlushError() error {
 	return nil
 }
 
+func (rr *responseRecorder) Flush() {
+	if rr.stream {
+		//nolint:bodyclose
+		http.NewResponseController(rr.ResponseWriterWrapper).Flush()
+	}
+}
+
 // Private interface so it can only be used in this package
 // #TODO: maybe export it later
 func (rr *responseRecorder) setReadSize(size *int) {
