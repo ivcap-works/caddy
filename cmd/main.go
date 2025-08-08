@@ -41,8 +41,8 @@ import (
 	"go.uber.org/zap"
 	"go.uber.org/zap/exp/zapslog"
 
-	"github.com/caddyserver/caddy/v2"
-	"github.com/caddyserver/caddy/v2/caddyconfig"
+	"github.com/ivcap-works/caddy/v2"
+	"github.com/ivcap-works/caddy/v2/caddyconfig"
 )
 
 func init() {

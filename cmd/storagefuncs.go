@@ -26,7 +26,7 @@ import (
 
 	"github.com/caddyserver/certmagic"
 
-	"github.com/caddyserver/caddy/v2"
+	"github.com/ivcap-works/caddy/v2"
 )
 
 type storVal struct {

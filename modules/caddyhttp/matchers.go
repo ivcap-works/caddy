@@ -36,8 +36,8 @@ import (
 	"github.com/google/cel-go/common/types/ref"
 	"golang.org/x/net/idna"
 
-	"github.com/caddyserver/caddy/v2"
-	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
+	"github.com/ivcap-works/caddy/v2"
+	"github.com/ivcap-works/caddy/v2/caddyconfig/caddyfile"
 )
 
 type (

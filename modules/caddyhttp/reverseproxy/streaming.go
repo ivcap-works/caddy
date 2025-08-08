@@ -35,7 +35,7 @@ import (
 	"go.uber.org/zap/zapcore"
 	"golang.org/x/net/http/httpguts"
 
-	"github.com/caddyserver/caddy/v2/modules/caddyhttp"
+	"github.com/ivcap-works/caddy/v2/modules/caddyhttp"
 )
 
 type h2ReadWriteCloser struct {
@@ -172,7 +172,7 @@ func (h *Handler) handleUpgradeResponse(logger *zap.Logger, wg *sync.WaitGroup, 
 	}
 
 	// There may be buffered data in the *bufio.Reader
-	// see: https://github.com/caddyserver/caddy/issues/6273
+	// see: https://github.com/ivcap-works/caddy/issues/6273
 	if buffered := brw.Reader.Buffered(); buffered > 0 {
 		data, _ := brw.Peek(buffered)
 		_, err := backConn.Write(data)
@@ -257,13 +257,13 @@ func (h Handler) flushInterval(req *http.Request, res *http.Response) time.Durat
 
 // isBidirectionalStream returns whether we should work in bi-directional stream mode.
 //
-// See https://github.com/caddyserver/caddy/pull/3620 for discussion of nuances.
+// See https://github.com/ivcap-works/caddy/pull/3620 for discussion of nuances.
 func (h Handler) isBidirectionalStream(req *http.Request, res *http.Response) bool {
 	// We have to check the encoding here; only flush headers with identity encoding.
 	// Non-identity encoding might combine with "encode" directive, and in that case,
 	// if body size larger than enc.MinLength, upper level encode handle might have
 	// Content-Encoding header to write.
-	// (see https://github.com/caddyserver/caddy/issues/3606 for use case)
+	// (see https://github.com/ivcap-works/caddy/issues/3606 for use case)
 	ae := req.Header.Get("Accept-Encoding")
 
 	return req.ProtoMajor == 2 &&

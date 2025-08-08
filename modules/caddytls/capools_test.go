@@ -7,9 +7,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/caddyserver/caddy/v2"
-	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
-	_ "github.com/caddyserver/caddy/v2/modules/filestorage"
+	"github.com/ivcap-works/caddy/v2"
+	"github.com/ivcap-works/caddy/v2/caddyconfig/caddyfile"
+	_ "github.com/ivcap-works/caddy/v2/modules/filestorage"
 )
 
 const (

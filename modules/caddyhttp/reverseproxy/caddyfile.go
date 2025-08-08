@@ -24,16 +24,16 @@ import (
 
 	"github.com/dustin/go-humanize"
 
-	"github.com/caddyserver/caddy/v2"
-	"github.com/caddyserver/caddy/v2/caddyconfig"
-	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
-	"github.com/caddyserver/caddy/v2/caddyconfig/httpcaddyfile"
-	"github.com/caddyserver/caddy/v2/internal"
-	"github.com/caddyserver/caddy/v2/modules/caddyhttp"
-	"github.com/caddyserver/caddy/v2/modules/caddyhttp/headers"
-	"github.com/caddyserver/caddy/v2/modules/caddyhttp/rewrite"
-	"github.com/caddyserver/caddy/v2/modules/caddytls"
-	"github.com/caddyserver/caddy/v2/modules/internal/network"
+	"github.com/ivcap-works/caddy/v2"
+	"github.com/ivcap-works/caddy/v2/caddyconfig"
+	"github.com/ivcap-works/caddy/v2/caddyconfig/caddyfile"
+	"github.com/ivcap-works/caddy/v2/caddyconfig/httpcaddyfile"
+	"github.com/ivcap-works/caddy/v2/internal"
+	"github.com/ivcap-works/caddy/v2/modules/caddyhttp"
+	"github.com/ivcap-works/caddy/v2/modules/caddyhttp/headers"
+	"github.com/ivcap-works/caddy/v2/modules/caddyhttp/rewrite"
+	"github.com/ivcap-works/caddy/v2/modules/caddytls"
+	"github.com/ivcap-works/caddy/v2/modules/internal/network"
 )
 
 func init() {

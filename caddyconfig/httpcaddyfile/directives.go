@@ -23,10 +23,10 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/caddyserver/caddy/v2"
-	"github.com/caddyserver/caddy/v2/caddyconfig"
-	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
-	"github.com/caddyserver/caddy/v2/modules/caddyhttp"
+	"github.com/ivcap-works/caddy/v2"
+	"github.com/ivcap-works/caddy/v2/caddyconfig"
+	"github.com/ivcap-works/caddy/v2/caddyconfig/caddyfile"
+	"github.com/ivcap-works/caddy/v2/modules/caddyhttp"
 )
 
 // defaultDirectiveOrder specifies the default order
@@ -495,14 +495,14 @@ func sortRoutes(routes []ConfigValue) {
 				}
 
 				// we use the trimmed length to compare the paths
-				// https://github.com/caddyserver/caddy/issues/7012#issuecomment-2870142195
+				// https://github.com/ivcap-works/caddy/issues/7012#issuecomment-2870142195
 				// credit to https://github.com/Hellio404
 				// for sorts with many items, mixing matchers w/ and w/o wildcards will confuse the sort and result in incorrect orders
 				iPathLen = len(iPathTrimmed)
 				jPathLen = len(jPathTrimmed)
 
 				// if both paths have the same length, sort lexically
-				// https://github.com/caddyserver/caddy/pull/7015#issuecomment-2871993588
+				// https://github.com/ivcap-works/caddy/pull/7015#issuecomment-2871993588
 				if iPathLen == jPathLen {
 					return iPathTrimmed < jPathTrimmed
 				}

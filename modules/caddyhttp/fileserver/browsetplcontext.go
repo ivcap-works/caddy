@@ -31,8 +31,8 @@ import (
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 
-	"github.com/caddyserver/caddy/v2"
-	"github.com/caddyserver/caddy/v2/modules/caddyhttp"
+	"github.com/ivcap-works/caddy/v2"
+	"github.com/ivcap-works/caddy/v2/modules/caddyhttp"
 )
 
 func (fsrv *FileServer) directoryListing(ctx context.Context, fileSystem fs.FS, parentModTime time.Time, entries []fs.DirEntry, canGoUp bool, root, urlPath string, repl *caddy.Replacer) *browseTemplateContext {
@@ -134,7 +134,7 @@ func (fsrv *FileServer) directoryListing(ctx context.Context, fileSystem fs.FS, 
 
 	// this time is used for the Last-Modified header and comparing If-Modified-Since from client
 	// both are expected to be in UTC, so we convert to UTC here
-	// see: https://github.com/caddyserver/caddy/issues/6828
+	// see: https://github.com/ivcap-works/caddy/issues/6828
 	tplCtx.lastModified = tplCtx.lastModified.UTC()
 	return tplCtx
 }

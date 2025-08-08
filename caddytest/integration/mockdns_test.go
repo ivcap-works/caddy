@@ -6,8 +6,8 @@ import (
 	"github.com/caddyserver/certmagic"
 	"github.com/libdns/libdns"
 
-	"github.com/caddyserver/caddy/v2"
-	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
+	"github.com/ivcap-works/caddy/v2"
+	"github.com/ivcap-works/caddy/v2/caddyconfig/caddyfile"
 )
 
 func init() {

@@ -8,8 +8,8 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/caddyserver/caddy/v2"
-	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
+	"github.com/ivcap-works/caddy/v2"
+	"github.com/ivcap-works/caddy/v2/caddyconfig/caddyfile"
 )
 
 func init() {
@@ -52,7 +52,7 @@ func (p ProxyFromURL) Validate() error {
 // ProxyFunc implements ProxyFuncProducer.
 func (p ProxyFromURL) ProxyFunc() func(*http.Request) (*url.URL, error) {
 	if strings.Contains(p.URL, "{") && strings.Contains(p.URL, "}") {
-		// courtesy of @ImpostorKeanu: https://github.com/caddyserver/caddy/pull/6397
+		// courtesy of @ImpostorKeanu: https://github.com/ivcap-works/caddy/pull/6397
 		return func(r *http.Request) (*url.URL, error) {
 			// retrieve the replacer from context.
 			repl, ok := r.Context().Value(caddy.ReplacerCtxKey).(*caddy.Replacer)

@@ -28,11 +28,11 @@ import (
 	"github.com/mholt/acmez/v3/acme"
 	"go.uber.org/zap/zapcore"
 
-	"github.com/caddyserver/caddy/v2"
-	"github.com/caddyserver/caddy/v2/caddyconfig"
-	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
-	"github.com/caddyserver/caddy/v2/modules/caddyhttp"
-	"github.com/caddyserver/caddy/v2/modules/caddytls"
+	"github.com/ivcap-works/caddy/v2"
+	"github.com/ivcap-works/caddy/v2/caddyconfig"
+	"github.com/ivcap-works/caddy/v2/caddyconfig/caddyfile"
+	"github.com/ivcap-works/caddy/v2/modules/caddyhttp"
+	"github.com/ivcap-works/caddy/v2/modules/caddytls"
 )
 
 func init() {
@@ -156,7 +156,7 @@ func parseTLS(h Helper) ([]ConfigValue, error) {
 
 		// tag this certificate so if multiple certs match, specifically
 		// this one that the user has provided will be used, see #2588:
-		// https://github.com/caddyserver/caddy/issues/2588 ... but we
+		// https://github.com/ivcap-works/caddy/issues/2588 ... but we
 		// must be careful about how we do this; being careless will
 		// lead to failed handshakes
 		//

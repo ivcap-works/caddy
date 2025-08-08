@@ -27,13 +27,13 @@ import (
 	"github.com/spf13/cobra"
 	"go.uber.org/zap"
 
-	caddycmd "github.com/caddyserver/caddy/v2/cmd"
+	caddycmd "github.com/ivcap-works/caddy/v2/cmd"
 
-	"github.com/caddyserver/caddy/v2"
-	"github.com/caddyserver/caddy/v2/caddyconfig"
-	"github.com/caddyserver/caddy/v2/modules/caddyhttp"
-	"github.com/caddyserver/caddy/v2/modules/caddyhttp/encode"
-	caddytpl "github.com/caddyserver/caddy/v2/modules/caddyhttp/templates"
+	"github.com/ivcap-works/caddy/v2"
+	"github.com/ivcap-works/caddy/v2/caddyconfig"
+	"github.com/ivcap-works/caddy/v2/modules/caddyhttp"
+	"github.com/ivcap-works/caddy/v2/modules/caddyhttp/encode"
+	caddytpl "github.com/ivcap-works/caddy/v2/modules/caddyhttp/templates"
 )
 
 func init() {
